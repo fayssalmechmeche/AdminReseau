@@ -1,5 +1,6 @@
 const express = require("express");
 const pg = require("pg");
+const cors = require("cors");
 
 const { Client } = pg;
 const client = new Client();
@@ -8,6 +9,7 @@ const app = express();
 const PORT = 8081;
 
 app.use(express.json());
+app.use(cors({ origin: "*" }));
 
 app.get("/", async (req, res) => {
   try {
