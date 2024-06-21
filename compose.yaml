@@ -43,3 +43,14 @@ services:
       - ./nginx/html:/usr/share/nginx/html
     depends_on:
       - node
+
+  samba:
+    image: dperson/samba
+    ports:
+      - "139:139"
+      - "445:445"
+    volumes:
+      - ./samba:/mount
+    environment:
+      - USER=app;app
+      - SHARE=app;/mount
