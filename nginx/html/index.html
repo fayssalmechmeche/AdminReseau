@@ -8,7 +8,25 @@
 </head>
 
 <body>
-	<p>Hello, World!</p>
+	<div id="app"></div>
 </body>
+
+<script>
+	const fetchUsers = async () => {
+		const response = await fetch('http://localhost:8081');
+		const data = await response.json();
+
+		const app = document.getElementById('app');
+
+		// Add each user in the 'data' array as a new p element
+		data.forEach(user => {
+			const p = document.createElement('p');
+			p.textContent = JSON.stringify(user);
+			app.appendChild(p);
+		});
+	};
+
+	fetchUsers();
+</script>
 
 </html>
