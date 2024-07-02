@@ -61,5 +61,5 @@ services:
     depends_on:
       - nginx
     volumes:
-      - ./certbot/conf:/etc/letsencrypt
-      - ./certbot/www:/var/www/certbot
+      - ./nginx/certs:/etc/letsencrypt
+    entrypoint: "certbot renew"
