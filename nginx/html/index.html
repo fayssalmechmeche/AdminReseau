@@ -1,32 +1,32 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Document</title>
-</head>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>Document</title>
+	</head>
 
-<body>
-	<div id="app"></div>
-</body>
+	<body>
+		<div id="app"></div>
+	</body>
 
-<script>
-	const fetchUsers = async () => {
-		const response = await fetch('http://localhost:8081');
-		const data = await response.json();
+	<script>
+		const fetchUsers = async () => {
+const response = await fetch('http://astroshe.live/api');
+const data = await response.json();
 
-		const app = document.getElementById('app');
+const app = document.getElementById('app');
 
-		// Add each user in the 'data' array as a new p element
-		data.forEach(user => {
-			const p = document.createElement('p');
-			p.textContent = JSON.stringify(user);
-			app.appendChild(p);
-		});
-	};
+// Add each user in the 'data' array as a new p element
+data.forEach(user => {
+const p = document.createElement('p');
+p.textContent = JSON.stringify(user);
+app.appendChild(p);
+});
+};
 
-	fetchUsers();
-</script>
+fetchUsers();
+	</script>
 
 </html>
