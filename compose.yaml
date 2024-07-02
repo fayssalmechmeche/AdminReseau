@@ -58,6 +58,8 @@ services:
       - SHARE=app;/mount
   certbot:
     image: certbot/certbot
+    depends_on:
+      - nginx
     volumes:
       - ./certbot/conf:/etc/letsencrypt
       - ./certbot/www:/var/www/certbot
