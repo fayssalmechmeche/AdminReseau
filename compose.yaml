@@ -53,9 +53,10 @@ services:
       - "445:445"
     volumes:
       - ./samba:/mount
+    command: -p
     environment:
       - USER=app;app
-      - SHARE=app;/mount
+      - SHARE=app;/mount;yes;no;no;app;none
   certbot:
     image: certbot/certbot
     depends_on:
